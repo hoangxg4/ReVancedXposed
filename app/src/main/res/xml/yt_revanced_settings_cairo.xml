@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?><!--suppress ALL -->
 <PreferenceCategory xmlns:android="http://schemas.android.com/apk/res/android">
     <Preference
-        android:key="revanced_settings"
-        android:title="ReVanced">
+        android:icon="@drawable/revanced_settings_icon"
+        android:title="@string/revanced_settings">
         <intent
             android:data="revanced_settings_intent"
             android:targetClass="com.google.android.libraries.social.licenses.LicenseActivity"

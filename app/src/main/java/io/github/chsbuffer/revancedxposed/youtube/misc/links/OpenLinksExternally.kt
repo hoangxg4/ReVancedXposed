@@ -1,7 +1,6 @@
 package io.github.chsbuffer.revancedxposed.youtube.misc.links
 
 import de.robv.android.xposed.XSharedPreferences
-import io.github.chsbuffer.revancedxposed.R // <-- QUAN TRỌNG: Đảm bảo có dòng import này
 import io.github.chsbuffer.revancedxposed.shared.misc.settings.preference.SwitchPreference
 import io.github.chsbuffer.revancedxposed.youtube.YoutubeHook
 import io.github.chsbuffer.revancedxposed.youtube.misc.settings.PreferenceScreen
@@ -13,13 +12,13 @@ fun YoutubeHook.openLinksExternallyHook() {
     val CUSTOM_TABS_ACTION = "android.support.customtabs.action.CustomTabsService"
     val EXTERNAL_BROWSER_ACTION = "android.intent.action.VIEW"
 
-    // Thêm tùy chọn vào giao diện cài đặt với ĐẦY ĐỦ thông tin
+    // Thêm tùy chọn vào giao diện cài đặt với văn bản được định nghĩa trực tiếp
     PreferenceScreen.MISC.addPreferences(
         SwitchPreference(
             key = PREFERENCE_KEY,
-            titleKey = "revanced_external_browser_title",     // <-- Trỏ đến string title đã tạo
-            summaryKey = "revanced_external_browser_summary", // <-- Trỏ đến string summary đã tạo
-            defaultValue = false                              // <-- Cung cấp giá trị mặc định
+            title = "Open links externally",                 // <-- Thay vì titleKey, dùng title
+            summary = "Always open links in your default browser instead of the in-app browser.", // <-- Thay vì summaryKey, dùng summary
+            defaultValue = false
         )
     )
 

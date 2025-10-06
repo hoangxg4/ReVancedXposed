@@ -20,6 +20,8 @@ import io.github.chsbuffer.revancedxposed.youtube.layout.sponsorblock.SponsorBlo
 import io.github.chsbuffer.revancedxposed.youtube.layout.startupshortsreset.DisableResumingShortsOnStartup
 import io.github.chsbuffer.revancedxposed.youtube.misc.backgroundplayback.BackgroundPlayback
 import io.github.chsbuffer.revancedxposed.youtube.misc.debugging.EnableDebugging
+// <--- BƯỚC 1: THÊM DÒNG IMPORT NÀY
+import io.github.chsbuffer.revancedxposed.youtube.misc.links.openLinksExternallyHook
 import io.github.chsbuffer.revancedxposed.youtube.misc.privacy.SanitizeSharingLinks
 import io.github.chsbuffer.revancedxposed.youtube.misc.settings.SettingsHook
 import io.github.chsbuffer.revancedxposed.youtube.shared.YOUTUBE_MAIN_ACTIVITY_CLASS_TYPE
@@ -53,6 +55,7 @@ class YoutubeHook(
         ::EnableDebugging,
         ::ForceOriginalAudio,
         ::CheckRecycleBitmapMediaSession,
+        ::openLinksExternallyHook, // <--- BƯỚC 2: THÊM TÊN HOOK VÀO DANH SÁCH
         // make sure settingsHook at end to build preferences
         ::SettingsHook
     )

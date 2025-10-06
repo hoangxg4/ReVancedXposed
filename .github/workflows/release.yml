@@ -1,6 +1,7 @@
 name: Android Release CI
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - '*.*.*'

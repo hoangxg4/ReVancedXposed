@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <SwitchPreferenceCompat
-        app:key="revanced_external_browser"
-        app:title="Open links externally"
-        app:summary="Always open links in your default browser instead of the in-app browser."
-        app:defaultValue="false" />
+        android:key="revanced_external_browser"
+        android:title="Open links externally"
+        android:summary="Always open links in your default browser instead of the in-app browser."
+        android:defaultValue="false" />
 
 </PreferenceScreen>

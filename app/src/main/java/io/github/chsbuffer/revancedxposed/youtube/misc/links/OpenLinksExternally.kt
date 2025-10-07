@@ -16,8 +16,9 @@ fun YoutubeHook.openLinksExternallyHook() {
         before { param ->
             val originalAction = param.args[0] as? String ?: return@before
             
-            // Gọi đến logic có sẵn từ file Java
-            param.args[0] = OpenLinksExternallyPatch.getIntentAction(originalAction)
+            // THAY ĐỔI DUY NHẤT Ở ĐÂY:
+            // Gọi đúng tên hàm gốc là "getIntent"
+            param.args[0] = OpenLinksExternallyPatch.getIntent(originalAction)
         }
     }
 }

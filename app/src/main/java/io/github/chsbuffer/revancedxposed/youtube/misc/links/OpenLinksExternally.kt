@@ -10,7 +10,7 @@ import io.github.chsbuffer.revancedxposed.youtube.misc.settings.PreferenceScreen
 import org.luckypray.dexkit.wrap.DexMethod
 
 fun YoutubeHook.openLinksExternallyHook() {
-    // Thêm UI vào menu (giữ nguyên)
+    // Thêm UI vào menu, nó sẽ tự tìm thấy title/summary từ "kho chung"
     PreferenceScreen.MISC.addPreferences(
         SwitchPreference("revanced_external_browser")
     )
@@ -31,7 +31,6 @@ fun YoutubeHook.openLinksExternallyHook() {
                 // ...thì chúng ta ngăn không cho hàm launchUrl gốc được chạy nữa.
                 param.result = null 
             }
-            // Nếu handled = false, chúng ta không làm gì cả, để cho hàm gốc chạy và mở in-app browser.
         }
     })
 }

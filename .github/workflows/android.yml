@@ -1,13 +1,18 @@
 name: Android CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
+    if: |
+      !contains(github.event.head_commit.message, 'update submodule') &&
+      !contains(github.event.head_commit.message, 'chore: update submodules') &&
+      !contains(github.event.head_commit.message, 'Auto Update Submodules')
 
     steps:
     - uses: actions/checkout@v4

@@ -1,3 +1,4 @@
 [submodule "revanced-patches"]
-	path = revanced-patches
-	url = https://github.com/hoangxg4/revanced-patches.git
+    path = revanced-patches
+    url = https://github.com/hoangxg4/revanced-patches.git
+    branch = rvxp
